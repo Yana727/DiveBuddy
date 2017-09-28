@@ -1,0 +1,70 @@
+@model IEnumerable<DiveBuddy.ReviewsModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<main>
+  <img  class="mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
+
+  <div class = "title">
+    <h2>Title</h2>
+       <section class = "stars">
+         <img = "one">
+             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "two">
+             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "three">
+             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "four">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "five">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+       </section>
+  </div>
+  <section class = "locationInfo">
+    <div class = "address">
+       <div class = "street"></div>
+         <h4>123 Fake Street</h4>
+       <div class = "city"></div>
+         <h4>St Pete, FL 33701</h4>
+    <div class = "phone"></div> 
+       <h4>555-555-5555</h4> 
+  </section>
+</main>
+<main>
+  
+ <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
+  <div class = "title">
+    <h2>Title</h2>
+       <section class = "stars">
+         <img = "one">
+             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "two">
+             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "three">
+             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "four">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+         <img = "five">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+       </section>
+</div>
+
+<section class = "locationInfo">
+    <div class = "address">
+       <div class = "street"></div>
+         <h4>123 Fake Street</h4>
+       <div class = "city"></div>
+         <h4>St Pete, FL 33701</h4>
+    <div class = "phone"></div> 
+       <h4>555-555-5555</h4> 
+</section>
+
+</main>
+<!--logic--> 
+
+@foreach (var item in Model)
+{
+
+}
+       
