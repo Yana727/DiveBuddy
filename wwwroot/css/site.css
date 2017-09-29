@@ -1,4 +1,9 @@
 ﻿
+.navbar-inverse a.navbar-brand {
+    color:#f7f8f9; 
+}
+
+
 body {
    padding-top: 50px;
    background-image: url("/images/underWater.jpg"); 
@@ -6,12 +11,12 @@ body {
    background-repeat: no-repeat;
    background-attachment: fixed; 
    margin: 0;
+   font-family: Georgia, serif;
    
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
-
 
 /* Carousel */
 .carousel-caption p {
@@ -56,8 +61,8 @@ main {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
-    color: white;
+    background-color:#f9f9f9;
+    color: black;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -66,7 +71,7 @@ main {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color: #f9f9f9;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -102,19 +107,60 @@ main {
 /* Details page */
 
 .t {
-    font-family: Georgia, serif;
+    padding-left: 1em; 
 }
 
 .buttons {
-    color: red; 
+    color: black; 
     display: flex; 
+}
+
+.buttons > button {
+    margin: 2em 1em 2em 0; 
+}
+
+.write {
+    padding: 0.5em 0.5em 0.5em 0.5em; 
+}
+
+
+#top { 
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #f7f8f9; 
+    border-radius: 3px;
+    margin: 1em; 
+    
+}
+
+.pix {
+    background-color: #f7f8f9; 
+    border-radius: 3px; 
+    display: flex; 
+    justify-content: space-around; 
+}
+
+#bottom {
+    color: black; 
+    display: flex;
     justify-content: space-between; 
 }
 
-#top { /* something isn't working */
-    display: flex; 
-    justify-content: space-between; 
-    width: 100%; 
+
+.reviewsAndStars {
+    width : 80%; 
+    padding: 0.5em 0.5em; 
+    margin: 1em; 
+    background-color:  #f7f8f9; 
+    border-radius: 3px; 
+}
+
+.address2 {
+    color: black; 
+    background-color: #f7f8f9; 
+    padding: 0.5em 0.5em; 
+    margin: 1em; 
+    border-radius: 3px; 
 }
 
 
