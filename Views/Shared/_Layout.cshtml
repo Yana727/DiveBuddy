@@ -3,17 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Dive Buddy</title>
- <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">What are you looking for?</button>
-    <div id="myDropdown" class="dropdown-content">
-    <a href="Dive">Link 1</a>
-    <a href="Free">Link 2</a>
-    <a href="Shop">Link 3</a>
-    <a href="Certif">Link 3</a>
-    <a href="Boat">Link 3</a>
-  </div>
-
+    <title>@ViewData["Title"] - DiveBuddy</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -36,14 +26,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DiveBuddy</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Dive Buddy</a>
             </div>
-            <div class="navbar-collapse collapse">
+<!-- Dropdown HERE --> 
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+         </div>
+      </div>
+<!-- Dropdown HTML ends ^ -->  
+    
+          <!--  <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+                </ul> --> 
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
@@ -52,7 +53,7 @@
         @RenderBody()
         
         <footer>
-            <p>&copy; 2017 - DiveBuddy</p>
+            <p>&copy; 2017 - Dive Buddy</p>
         </footer>
     </div>
 
