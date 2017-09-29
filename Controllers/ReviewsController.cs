@@ -29,6 +29,11 @@ namespace DiveBuddy.Controllers
         // GET: Reviews/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            // this is for the mock purposes
+            return View(new ReviewsModel{
+                
+            });
+
             if (id == null)
             {
                 return NotFound();
