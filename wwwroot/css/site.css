@@ -6,8 +6,6 @@ body {
    background-repeat: no-repeat;
    background-attachment: fixed; 
    margin: 0;
-   display: flex;
-   align-items: center;
    
 }
 
@@ -100,6 +98,24 @@ main {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/* Details page */
+
+.t {
+    font-family: Georgia, serif;
+}
+
+.buttons {
+    color: red; 
+    display: flex; 
+    justify-content: space-between; 
+}
+
+#top { /* something isn't working */
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+}
 
 
 

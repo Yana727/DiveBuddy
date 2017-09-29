@@ -3,15 +3,15 @@
 @{
     ViewData["Title"] = "Details";
 }
+<section id = "top">
+   <h1 class = "t">Title</h1>
+   <div class = "buttons">
 
-<h2 class = "t">Title</h2>
+     <button type="submit" value="Submit">Write a Review</button>
 
-<div class = "buttons">
-
-  <button type="submit" value="Submit">Write a Review</button>
-
-  <button type="submit" value="Submit">Add photo</button>
-</div>
+     <button type="submit" value="Submit">Add photo</button>
+   </div>
+</section>
 
   <section class = "pix">
      <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
@@ -25,9 +25,11 @@
         <h4>123 Fake Street</h4>
         <h4>St Pete, FL 33701</h4>
         <h4>555-555-5555</h4>
+        <h4>Directions here</h4>
     </div>
 </section>
-  <section class = "starsReviews">
+<section class = "reviewsAndStars"
+  <div class = "stars2">
          <img = "one">
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
          <img = "two">
@@ -38,7 +40,7 @@
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
          <img = "five">
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-
+  </div> 
         <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
             Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. 
             Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. 
