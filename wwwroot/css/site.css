@@ -162,6 +162,58 @@ main {
     margin: 1em; 
     border-radius: 3px; 
 }
+/* CREATE Wrting the review page */ 
+.w {
+    background-color: #f7f8f9; 
+    padding: 0.5em; 
+    border-radius: 3px; 
+}
+.t2 {
+    background-color:  #f7f8f9;
+    border-radius: 3px; 
+    width: auto; 
+    text-align: center; 
+}
+.address3 {
+    color: black; 
+    background-color: #f7f8f9; 
+    padding: 0.5em 0.5em; 
+    border-radius: 3px; 
+    width: 20%;     
+}
+.ur{ 
+    color: white; 
+    display: flex; 
+    align-self: center; 
+}
+
+.select {
+    display: flex;
+    justify-content: space-around; 
+    width: 70%; 
+}
+form {
+    background-color: #f7f8f9; 
+    display: flex; 
+    flex-direction: column; 
+    padding: 1.5em; 
+    border-radius: 3px; 
+    width: 50%; 
+    align-items: center; 
+    align-self: center; 
+}
+.yourreview
+{
+    display:flex; 
+    justify-content: center; 
+}
+
+
+
+
+
+
+/* Upload photos */
 
 
 

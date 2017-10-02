@@ -4,45 +4,41 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
 
-<h4>ReviewsModel</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <!-- <div class="col-md-4"> --> 
+    <h2 class = "w"> Write a Review</h2>
+
+     <h1 class = "t2">Title</h1>
+       <section id = "locationInfo3">
+          <div class="address3">
+             <h4>123 Fake Street</h4>
+             <h4>St Pete, FL 33701</h4>
+             <h4>555-555-5555</h4>
+             <h4>Directions here</h4>
+          </div>
+       </section>   
+            <h3 class = "ur">Your review</h3>
+         <section class = "yourreview">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <section class = "select">
+              <div class = "stars2">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+              </div>           
+                <h4>    Select your rating</h4>
+          </section>
             <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review" class="control-label"></label>
-                <input asp-for="Review" class="form-control" />
+                <textarea rows = "7" cols = "50"></textarea>
                 <span asp-validation-for="Review" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+                <input type="submit" value="Submit" class="btn btn-default" />
             </div>
-            <div class="form-group">
-                <label asp-for="ApplicationUserID" class="control-label"></label>
-                <select asp-for="ApplicationUserID" class ="form-control" asp-items="ViewBag.ApplicationUserID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="BuisnessId" class="control-label"></label>
-                <select asp-for="BuisnessId" class ="form-control" asp-items="ViewBag.BuisnessId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+          </section> 
         </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 

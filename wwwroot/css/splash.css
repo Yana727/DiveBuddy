@@ -1,6 +1,6 @@
 ﻿
 body {
-    padding-top: 100px;
+    padding-top: 75px;
     background-image: url("/images/reef2.jpg");  
     background-size: cover;
 
@@ -69,7 +69,7 @@ a{
 }
 
 p{
-    padding-top: 450px; 
+    padding-top: 400px; 
     color: white; 
 }
 
