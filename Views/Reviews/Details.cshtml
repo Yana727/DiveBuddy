@@ -4,12 +4,11 @@
     ViewData["Title"] = "Details";
 }
 <section id = "top">
-   <h1 class = "t">Cool Diving Site</h1>
-   
+   <h1 class = "t">@Model.Title</h1> <!-- bc we are not looping--> 
    <div class = "buttons">
 
-     <button type="submit" value="Submit">Write a Review</button>
-     <button type="submit" value="Submit">Add photo</button>
+     <a asp-controller="Reviews" asp-action="Create" asp-route-id=@Model.Id class="btn btn-primary">Write a Review</a>
+     <a asp-controller="Photos" asp-action="Create" class="btn btn-primary">Add Photo</a>
    </div>
 </section>
 
@@ -20,17 +19,20 @@
      <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
      <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
   </section>
-<section id = "bottom">  
-  <section class = "locationInfo2">
+
+  <section id = "bottom">  
+    <section class = "locationInfo2">
      <div class="address2">
-        <h4>123 Fake Street</h4>
+        <h4>@Model.Address</h4>  <!--bc it's not in the loop--> 
         <h4>St Pete, FL 33701</h4>
-        <h4>555-555-5555</h4>
+        <h4>@Model.PhoneNbr</h4>
         <h4>Directions here</h4>
      </div>
-</section>
-<section class = "reviewsAndStars">
-  <div class = "stars2">
+  </section>
+    @foreach (var item in Model.Reviews)
+{
+  <section class = "reviewsAndStars">
+    <div class = "stars2">
         
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
@@ -38,31 +40,9 @@
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
 
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
-            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. 
-            Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. 
-            Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia 
-            nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
-            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. 
-            Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, 
-            iaculis vel, suscipit quis, luctu.
-        </h4>
-        
-             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-  </div> 
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
-            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. 
-            Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. 
-            Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia 
-            nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
-            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. 
-            Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, 
-            iaculis vel, suscipit quis, luctu.
-        </h4>
+        <h4>@item.Review</h4>
+
   </section>
+}
  </section>
 

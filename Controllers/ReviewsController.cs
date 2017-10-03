@@ -22,7 +22,7 @@ namespace DiveBuddy.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
-            // we want to pass all the locations from the controller to the view
+         // we want to pass all the locations from the controller to the view
             var locations = await _context.BuisnessModel.ToListAsync();
             return View(locations);
 
@@ -48,11 +48,9 @@ namespace DiveBuddy.Controllers
         }
 
         // GET: Reviews/Create
-        public IActionResult Create()
-        {
-            ViewData["ApplicationUserID"] = new SelectList(_context.Users, "Id", "Id");
-            ViewData["BuisnessId"] = new SelectList(_context.BuisnessModel, "Id", "Id");
-            return View();
+        public async Task<IActionResult> Create(int? id)
+        {   ViewData["businessId"] = id;
+            return View();                                  //^Review Model?
         }
 
         // POST: Reviews/Create
@@ -101,6 +99,30 @@ namespace DiveBuddy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        //here's the create post from a user
+
+        public async Task<IActionResult> Create([FromRoute]int id, [FromForm]string review) //review 
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                var newReview = new Review
+                {
+                     ReviewText = review,
+                     ApplicationUserId = user.Id,
+                     QuestionId = id, 
+                };
+                _context.ReviewsModel.Add(newReview);
+                Console.WriteLine($"{newReview.QuestionId}, {newReview.ApplicationUserId}");
+
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Details), "Reviews", new { id = newReview.ReviewId });
+            }
+            return View(review);
+        }
+        // ^ ends here
+
         public async Task<IActionResult> Edit(int id, [Bind("Id,Rating,Review,CreatedAt,ApplicationUserID,BuisnessId")] ReviewsModel reviewsModel)
         {
             if (id != reviewsModel.Id)
