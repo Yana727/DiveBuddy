@@ -1,5 +1,7 @@
 using System;
 using DiveBuddy.Models;
+using System.Linq; 
+using System.Threading.Tasks; 
 
 namespace DiveBuddy 
 { 

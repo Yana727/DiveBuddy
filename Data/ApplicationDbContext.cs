@@ -27,5 +27,7 @@ namespace DiveBuddy.Data
         public DbSet<DiveBuddy.BuisnessModel> BuisnessModel { get; set; }
 
         public DbSet<DiveBuddy.ReviewsModel> ReviewsModel { get; set; }
+
+        public DbSet<DiveBuddy.PhotosModel> PhotosModel { get; set; }
     }
 }

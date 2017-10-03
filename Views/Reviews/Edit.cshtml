@@ -4,48 +4,23 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 class = "admin">Administrator</h2>
 
-<h4>ReviewsModel</h4>
 <hr />
+   <div class = "buttons2">
+              <button type="submit" value="Submit">Add Buisness</button>
+              <button type="submit" value="Submit">Delete Buisness</button>
+              <button type="submit" value="Submit">Edit Buisness Info</button>
+   </div>
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review" class="control-label"></label>
-                <input asp-for="Review" class="form-control" />
-                <span asp-validation-for="Review" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApplicationUserID" class="control-label"></label>
-                <select asp-for="ApplicationUserID" class="form-control" asp-items="ViewBag.ApplicationUserID"></select>
-                <span asp-validation-for="ApplicationUserID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BuisnessId" class="control-label"></label>
-                <select asp-for="BuisnessId" class="form-control" asp-items="ViewBag.BuisnessId"></select>
-                <span asp-validation-for="BuisnessId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+    <section class = "edit">
+        <div class="address4">
+          <h2> Long Title</h2>
+          <h4>123 Fake Street</h4>
+          <h4>St Pete, FL 33701</h4>
+          <h4>555-555-5555</h4>
+          <h4>Website</h4>
+        </div>
+    </section>     
 </div>
 

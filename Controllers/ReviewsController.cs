@@ -80,6 +80,11 @@ namespace DiveBuddy.Controllers
         // GET: Reviews/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            // this is for the mock purposes ADDED ON TUESDAY AT 9:39AM
+            return View(new ReviewsModel{
+                
+            });
+        
             if (id == null)
             {
                 return NotFound();
