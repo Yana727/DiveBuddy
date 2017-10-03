@@ -6,6 +6,7 @@ namespace DiveBuddy{
         public string Title { get; set; }
         public string Address { get; set; }
         public string PhoneNbr { get; set; }
+        public string Website { get; set; }
 
         //FK Reviews
         public ICollection<ReviewsModel> Reviews { get; set; } = new HashSet<ReviewsModel>();

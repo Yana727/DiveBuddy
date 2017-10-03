@@ -25,8 +25,7 @@ namespace DiveBuddy.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            List<Guid> iamgeIds = _context.PhotosModel.Select(m => m.Id).ToList();
-            return View(iamgeIds);
+            return View();
         }
 
         [HttpPost]
