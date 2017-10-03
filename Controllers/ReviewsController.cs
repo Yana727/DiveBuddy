@@ -22,26 +22,22 @@ namespace DiveBuddy.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.ReviewsModel.Include(r => r.ApplicationUser).Include(r => r.Buisness);
-            return View(await applicationDbContext.ToListAsync());
+            // we want to pass all the locations from the controller to the view
+            var locations = await _context.BuisnessModel.ToListAsync();
+            return View(locations);
+
         }
 
         // GET: Reviews/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            // this is for the mock purposes
-            return View(new ReviewsModel{
-                
-            });
-
             if (id == null)
             {
                 return NotFound();
             }
 
-            var reviewsModel = await _context.ReviewsModel
-                .Include(r => r.ApplicationUser)
-                .Include(r => r.Buisness)
+            var reviewsModel = await _context.BuisnessModel //connects to db
+                .Include(i => i.Reviews) //bc it's the views
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (reviewsModel == null)
             {
