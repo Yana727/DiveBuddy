@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DiveBuddy;
 using DiveBuddy.Data;
+using DiveBuddy.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace DiveBuddy.Controllers
 {
     public class ReviewsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public ReviewsController(ApplicationDbContext context)
+        
+        private readonly UserManager<ApplicationUser> _userManager; 
+        public ReviewsController(ApplicationDbContext context, UserManager<ApplicationUser>um)
         {
             _context = context;
+            _userManager = um; 
         }
 
         // GET: Reviews
@@ -62,13 +66,15 @@ namespace DiveBuddy.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(HttpContext.User); //for the cookies to get user object
+                reviewsModel.ApplicationUserID = user.Id; // get object, set user id
                 _context.Add(reviewsModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ApplicationUserID"] = new SelectList(_context.Users, "Id", "Id", reviewsModel.ApplicationUserID);
             ViewData["BuisnessId"] = new SelectList(_context.BuisnessModel, "Id", "Id", reviewsModel.BuisnessId);
-            return View(reviewsModel);
+            return View(reviewsModel); 
         }
 
         // GET: Reviews/Edit/5
@@ -106,12 +112,12 @@ namespace DiveBuddy.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.GetUserAsync(HttpContext.User);
+               var user = await _userManager.GetUserAsync(HttpContext.User);
                 var newReview = new Review
                 {
                      ReviewText = review,
                      ApplicationUserId = user.Id,
-                     QuestionId = id, 
+                     ReviewId = id, 
                 };
                 _context.ReviewsModel.Add(newReview);
                 Console.WriteLine($"{newReview.QuestionId}, {newReview.ApplicationUserId}");

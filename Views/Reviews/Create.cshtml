@@ -13,9 +13,9 @@
      <h1 class = "t2">Title</h1>
        <section id = "locationInfo3">
           <div class="address3">
-             <h4>123 Fake Street</h4>
+             <h4>@Address.Model</h4> 
              <h4>St Pete, FL 33701</h4>
-             <h4>555-555-5555</h4>
+             <h4>@PhoneNBr.Model</h4>
              <h4>Directions here</h4>
           </div>
        </section>   
@@ -32,13 +32,15 @@
               </div>           
                 <h4>    Select your rating</h4>
           </section>
-            <div class="form-group">
+            <div class="form-group"> <!--Right?--> 
+                <form asp-action="Create" asp-route-id=Model.Id asp-controller="Reviews">
                 <textarea rows = "7" cols = "50"></textarea>
                 <span asp-validation-for="Review" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-default" />
+            <div class="form-group">6 `
+                <input type="submit" value="Submit" class="btn btn-default" />    
             </div>
+             </form> 
           </section> 
         </form>
 </div>
