@@ -7,8 +7,8 @@ namespace DiveBuddy
 { 
     public class PhotosModel 
     {
-      public Guid Id { get; set; }
-      public string Name { get; set; }
+      public Guid Id { get; set; } // or is it Id or does it matter? 
+      public string Name { get; set; } //of the image 
       public byte[] Data { get; set; }
       public int Width { get; set; }
       public int Height { get; set; }

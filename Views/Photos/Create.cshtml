@@ -9,50 +9,18 @@
 <h4>PhotosModel</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
-                <span asp-validation-for="Data" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Width" class="control-label"></label>
-                <input asp-for="Width" class="form-control" />
-                <span asp-validation-for="Width" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Height" class="control-label"></label>
-                <input asp-for="Height" class="form-control" />
-                <span asp-validation-for="Height" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContentType" class="control-label"></label>
-                <input asp-for="ContentType" class="form-control" />
-                <span asp-validation-for="ContentType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApplicationUserID" class="control-label"></label>
-                <select asp-for="ApplicationUserID" class ="form-control" asp-items="ViewBag.ApplicationUserID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="BuisnessId" class="control-label"></label>
-                <select asp-for="BuisnessId" class ="form-control" asp-items="ViewBag.BuisnessId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
+    <div class="col-md-4"> <!--tots C/P from Overstack" --> 
+        <div class="form-group">
+     <label class="col-md-2 control-label">Employee Image</label>
+     <div class="col-md-10">
+          <input  class="form-control"  type="file" name="pic" accept="image/*"/>             
+     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="form-group">
+     <div class="col-md-offset-2 col-md-10">
+          <input type="submit" value="Create" class="btn btn-default" />
+     </div>
+</div>
+    </div>
 </div>
 

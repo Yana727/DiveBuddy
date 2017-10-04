@@ -29,34 +29,47 @@ namespace DiveBuddy.Controllers
         }
 
         [HttpPost]
-        public IActionResult UploadImage(IList<IFormFile> files)
+        public async Task<IActionResult> Create([Bind("Id, Name")]PhotosController photos)
         {
-            IFormFile uploadedImage = files.FirstOrDefault();
-            if (uploadedImage == null || uploadedImage.ContentType.ToLower().StartsWith("image/"))
+             if (ModelState.IsValid)
+        {
+            var files = HttpContext.Request.Form.Files;
+            foreach (var Image in files)
             {
-                    MemoryStream ms = new MemoryStream();
-                    uploadedImage.OpenReadStream().CopyTo(ms);
+                if (Image != null && Image.Length > 0)
+                {
 
-                  //  System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
+                    var file = Image;
+                    var uploads = Path.Combine(_environment.WebRootPath, "uploads\\img\\photosModel");
 
-                    // var imageEntity = new PhotosModel()
-                    // {
-                    //     Id = Guid.NewGuid(),
-                    //     Name = uploadedImage.Name,
-                    //     Data = ms.ToArray(),
-                    //     Width = image.Width,
-                    //     Height = image.Height,
-                    //     ContentType = uploadedImage.ContentType
-                    // };
+                    if (file.Length > 0)
+                    {
+                        var fileName = ContentDispositionHeaderValue.Parse
+                            (file.ContentDisposition).FileName.Trim('"');
 
-                   // this._context.PhotosModel.Add(imageEntity);
+                        System.Console.WriteLine(fileName);
+                        using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream);
+                            PhotosModel.Name = file.FileName;
+                        }
 
-                    _context.SaveChanges();
-                
+
+                    }
+                }
             }
-
-            return RedirectToAction("Index");
+                    _context.SaveChanges();
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index")
+                
+         }
+         
+        else
+        {
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
         }
+        return View(model: PhotosModel);
+    }
 
         [HttpGet]
         public FileStreamResult ViewImage(Guid id)
