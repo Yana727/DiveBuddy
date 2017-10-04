@@ -9,6 +9,7 @@ using DiveBuddy;
 using DiveBuddy.Data;
 using DiveBuddy.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DiveBuddy.Controllers
 {
@@ -105,7 +106,7 @@ namespace DiveBuddy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
+        [Authorize]
         //here's the create post from a user
 
         public async Task<IActionResult> Create([FromRoute]int id, [FromForm]string review) //review 
@@ -113,17 +114,17 @@ namespace DiveBuddy.Controllers
             if (ModelState.IsValid)
             {
                var user = await _userManager.GetUserAsync(HttpContext.User);
-                var newReview = new Review
+                var newReview = new ReviewsModel
                 {
-                     ReviewText = review,
-                     ApplicationUserId = user.Id,
-                     ReviewId = id, 
+                     Review = review, //comes from the model 
+                     ApplicationUserID = user.Id,
+                     BuisnessId = id, 
                 };
                 _context.ReviewsModel.Add(newReview);
-                Console.WriteLine($"{newReview.QuestionId}, {newReview.ApplicationUserId}");
-
+                Console.WriteLine($"{newReview.Review}, {newReview.ApplicationUserID}");
+                  // ^ writes a review, review shows up, userID shows up
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details), "Reviews", new { id = newReview.ReviewId });
+                return RedirectToAction(nameof(Details), "Reviews", new { id = newReview.Review});
             }
             return View(review);
         }
