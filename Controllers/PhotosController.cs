@@ -29,7 +29,7 @@ namespace DiveBuddy.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id, Name")]PhotosController photos)
+        public async Task<IActionResult> Create([Bind("Id, Name")]PhotosModel photos)
         {
              if (ModelState.IsValid)
         {
@@ -60,10 +60,10 @@ namespace DiveBuddy.Controllers
             }
                     _context.SaveChanges();
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("Index")
+                    return RedirectToAction("Index"); 
                 
          }
-         
+
         else
         {
             var errors = ModelState.Values.SelectMany(v => v.Errors);
