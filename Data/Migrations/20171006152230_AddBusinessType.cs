@@ -8,8 +8,7 @@ namespace DiveBuddy.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "PhotosModel");
+           
 
             migrationBuilder.AddColumn<int>(
                 name: "Type",

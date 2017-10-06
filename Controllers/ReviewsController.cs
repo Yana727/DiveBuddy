@@ -25,7 +25,7 @@ namespace DiveBuddy.Controllers
         }
 
         // GET: Reviews
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(BusinessEnum selectType)
         {
          // we want to pass all the locations from the controller to the view
             var locations = await _context.BuisnessModel.ToListAsync();

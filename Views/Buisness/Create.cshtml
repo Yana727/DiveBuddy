@@ -32,6 +32,8 @@
                 <input asp-for="Website" class="form-control" />
                 <span asp-validation-for="Website" class="text-danger"></span>
             </div>
+            @Html.DropDownListFor(c => c.Type, Enum.GetValues(typeof(DiveBuddy.BusinessEnum)).Cast<BusinessEnum>().Select(c => new SelectListItem { Text = c.ToString(), Value = c.ToString()})) 
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
