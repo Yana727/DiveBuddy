@@ -17,11 +17,11 @@
     
      </section>
     <nav class = "choicesLinks">
-          <a asp-controller="Reviews" asp-action="Index">Scuba Dive</a>
-          <a href="FreeDive.cshtml">Free Dive</a>
-          <a href="DiveShops.html">Dive Shops</a>
-          <a href="ScubaCertification.cshtml">Scuba Certification</a>
-          <a href="BoatCharters.cshtml">Boat Charters</a>
+          <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.ScubaDive>Scuba Dive</a>
+          <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.FreeDive>Free Dive</a>
+          <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.DiveShop>Dive Shops</a>
+          <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.ScubaCertification>Scuba Certification</a>
+          <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.BoatCharter>Boat Charters</a>
     </nav>
 
 </body>
