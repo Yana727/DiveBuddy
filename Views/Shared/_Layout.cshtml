@@ -37,9 +37,11 @@
 
         </button>
           <div id="myDropdown" class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.ScubaDive>Scuba Dive</a>
+            <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.FreeDive>Free Dive</a>
+            <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.DiveShop>Dive Shops</a>
+            <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.ScubaCertification>Scuba Certification</a>
+            <a asp-controller="Reviews" asp-action="Index" asp-route-selectType=@DiveBuddy.BusinessEnum.BoatCharter>Boat Charters</a>          
          </div>
       </div>
 <!-- Dropdown HTML ends ^ -->  

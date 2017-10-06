@@ -30,7 +30,7 @@ namespace DiveBuddy.Controllers
             Console.WriteLine("Selected " + selectType);
          // we want to pass all the locations from the controller to the view
             var locations = await _context.BuisnessModel.Where(w => w.Type == selectType).ToListAsync();
-            return View(locations);                     //^ to help filer 
+            return View(locations);                     //^ to help filer the types
 
         }
 
