@@ -6,13 +6,13 @@
 @foreach (var item in Model)
 {
 <main>
-  <img  class="mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
+  <img  class="mainImage" src="https://unsplash.it/150/150/?random" alt="mainImage" />
 
-  <div class = "title">
+  <div class="title">
 
-    <h2><a asp-conttoller="Reviews" asp-action="Details" asp-route-selectType=@DiveBuddy.FreeDive>@item.Title</a> <!--link to next page--></h2>
+    <h2><a asp-conttoller="Reviews" asp-action="Details" asp-route-id=@item.Id > @item.Title</a></h2>
                                                            
-       <section class = "stars"></section>
+       <section class="stars">
          <img = "one">
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
          <img = "two">

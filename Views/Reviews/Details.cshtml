@@ -7,7 +7,7 @@
    <h1 class = "t">@Model.Title</h1> <!-- bc we are not looping--> 
    <div class = "buttons">
 
-     <a asp-controller="Reviews" asp-action="Create" class="btn btn-primary">Write a Review</a>
+     <a asp-controller="Reviews" asp-action="Create" asp-route-id=@Model.Id class="btn btn-primary">Write a Review</a>
      <a asp-controller="Photos" asp-action="Create" class="btn btn-primary">Add Photo</a>
    </div>
 </section>
@@ -31,8 +31,8 @@
   </section>
     @foreach (var item in Model.Reviews)
 {
-  <section class = "reviewsAndStars">
-    <div class = "stars2">
+  <section id="reviewsAndStars">
+    <div class="stars2">
         
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
@@ -40,7 +40,7 @@
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
 
-        <h4>@item.Review</h4>
+        <h4>@item.Review.Length</h4>
 
   </section>
 }

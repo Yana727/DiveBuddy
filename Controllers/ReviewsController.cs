@@ -54,9 +54,12 @@ namespace DiveBuddy.Controllers
         }
 
         // GET: Reviews/Create
-        public async Task<IActionResult> Create(int? id)
-        {   ViewData["businessId"] = id;
-            return View();                                  //^Review Model?
+        public async Task<IActionResult> Create(int id)// connects to Db
+        {   
+            Console.WriteLine(id);
+                    // we want to pass ONE location from the controller to the view
+            var spot = await _context.BuisnessModel.FirstOrDefaultAsync(where => where.Id == id);
+            return View(spot);                     //^ to help filer the types
         }
 
         // POST: Reviews/Create
