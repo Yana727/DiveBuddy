@@ -9,8 +9,10 @@
   <img  class="mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
 
   <div class = "title">
-    <h2><a asp-action="Details" asp-route-id=1>@item.Title</a> <!--link to next page--></h2>
-       <section class = "stars">
+
+    <h2><a asp-conttoller="Reviews" asp-action="Details" asp-route-selectType=@DiveBuddy.FreeDive>@item.Title</a> <!--link to next page--></h2>
+                                                           
+       <section class = "stars"></section>
          <img = "one">
              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
          <img = "two">
