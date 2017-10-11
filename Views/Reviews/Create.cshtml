@@ -10,7 +10,7 @@
     <!-- <div class="col-md-4"> --> 
     <h2 class = "w"> Write a Review</h2>
 
-     <h1 class = "t2">Title</h1>
+     <h1 class = "t2"> @Model.Title</h1>
        <section id = "locationInfo3">
           <div class="address3">
              <h4>@Model.Address</h4>
@@ -20,8 +20,8 @@
           </div>
        </section>   
             <h3 class = "ur">Your review</h3>
-         <section class = "yourreview">
-        <form asp-action="Create">
+         <section class = "yourreview">  
+        <form asp-action="Create">  <!--don't mess with this--> 
           <section class = "select">
               <div class = "stars2">
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
