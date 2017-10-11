@@ -62,26 +62,6 @@ namespace DiveBuddy.Controllers
             return View(spot);                     //^ to help filer the types
         }
 
-        // POST: Reviews/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Create(int id, [Bind("Id,Rating,Review,CreatedAt,ApplicationUserID,BuisnessId")] ReviewsModel reviewsModel)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         var user = await _userManager.GetUserAsync(HttpContext.User); //for the cookies to get user object
-        //         reviewsModel.ApplicationUserID = user.Id; // get object, set user id
-        //         _context.Add(reviewsModel);
-        //         await _context.SaveChangesAsync();
-        //         return RedirectToAction(nameof(Index));
-        //     }
-        //     ViewData["ApplicationUserID"] = new SelectList(_context.Users, "Id", "Id", reviewsModel.ApplicationUserID);
-        //     ViewData["BuisnessId"] = new SelectList(_context.BuisnessModel, "Id", "Id", reviewsModel.BuisnessId);
-        //     return View(reviewsModel); 
-        // }
-
         // GET: Reviews/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
