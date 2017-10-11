@@ -96,18 +96,18 @@ namespace DiveBuddy.Controllers
         {
             if (ModelState.IsValid)
             {
-               var user = await _userManager.GetUserAsync(HttpContext.User);
+               var user = await _userManager.GetUserAsync(HttpContext.User);// have to login
                var newReview = new ReviewsModel  // NOT HAPPY HERE
                 {
                      Review = review, //comes from the model 
-                     ApplicationUserID = user.Id,
+                     ApplicationUserID = user?.Id, //"Elvis" if it's not set up, accept NULL
                      BuisnessId = id, 
                 };
                 _context.ReviewsModel.Add(newReview);
                 Console.WriteLine($"{newReview.Review}, {newReview.ApplicationUserID}");
                   // ^ writes a review, review shows up, userID shows up
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details), "Reviews", new { id = newReview.Review});
+                return RedirectToAction(nameof(Details), "Reviews", new { id = id});
             }
             return View(review);
         }
