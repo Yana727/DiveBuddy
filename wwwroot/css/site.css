@@ -142,6 +142,7 @@ main {
 #bottom {
     color: black; 
     display: flex;
+    flex-direction: column;
     justify-content: space-between; 
 }
 
@@ -154,12 +155,25 @@ main {
     border-radius: 3px; 
 }
 
+.stars2 {
+    display: flex;
+    flex-direction: row;
+
+}
+
 .address2 {
     color: black; 
     background-color: #f7f8f9; 
     padding: 0.5em 0.5em; 
     margin: 1em; 
     border-radius: 3px; 
+    width: 18%;
+}
+
+#revs {
+    display:flex; 
+    flex-direction: column;
+
 }
 /* CREATE Wrting the review page */ 
 .w {
