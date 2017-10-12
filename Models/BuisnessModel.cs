@@ -5,7 +5,6 @@ namespace DiveBuddy{
         public int Id { get; set; }
         public string Title { get; set; }
         public string Address { get; set; }
-        
         public string PhoneNbr { get; set; }
         public string Website { get; set; }
         public BusinessEnum Type { get; set; } //adding enum 

@@ -12,9 +12,10 @@ using System;
 namespace DiveBuddy.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171012142709_PhotosModels")]
+    partial class PhotosModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,28 +90,6 @@ namespace DiveBuddy.Data.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("DiveBuddy.PhotosModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ApplicationUserID");
-
-                    b.Property<int>("BuisnessId");
-
-                    b.Property<string>("PicName");
-
-                    b.Property<string>("Url");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserID");
-
-                    b.HasIndex("BuisnessId");
-
-                    b.ToTable("PhotosModel");
                 });
 
             modelBuilder.Entity("DiveBuddy.ReviewsModel", b =>
@@ -242,18 +221,6 @@ namespace DiveBuddy.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("DiveBuddy.PhotosModel", b =>
-                {
-                    b.HasOne("DiveBuddy.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserID");
-
-                    b.HasOne("DiveBuddy.BuisnessModel", "Buisness")
-                        .WithMany()
-                        .HasForeignKey("BuisnessId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DiveBuddy.ReviewsModel", b =>
