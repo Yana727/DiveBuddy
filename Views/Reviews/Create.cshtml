@@ -21,7 +21,7 @@
        </section>   
             <h3 class = "ur">Your review</h3>
          <section class = "yourreview">  
-        <form asp-action="Create" asp-route-id=@Model.Id>   
+        <form class="writeRew" asp-action="Create" asp-route-id=@Model.Id>   
           <section class = "select">
               <div class = "stars2">
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
@@ -39,6 +39,7 @@
               <input class="btn btn-primary" type="submit" value="Submit">
             </div>
           </section> 
-        </form>
+                <form asp-action="Create" asp-route-id=@Model.Id>   
+
 </div>
 

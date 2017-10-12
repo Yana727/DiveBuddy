@@ -1,0 +1,21 @@
+@model DiveBuddy.BuisnessModel
+
+@{
+    ViewData["Title"] = "Create";
+    var selectedBusinessId = ViewData["businessId"];  
+}
+
+<h1 class = "t2">@Model.Title</h1> <!--can't use @Model-->
+
+  <form id="picForm" asp-action="Create"> 
+      <section id = "photoBtn">
+        <div class="photo2">
+          <input class="btn btn-primary" type="submit" value="Add Your Photo">
+        </div>    
+      </section>          
+  </form>   
+
+
+ 
+
+

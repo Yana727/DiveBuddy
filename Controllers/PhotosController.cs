@@ -21,9 +21,9 @@ namespace DiveBuddy.Controllers
             _context = context;
             this._environment = appEnvironment; 
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Create(int? id)
        {
-            return View(await _context.PhotosModel.ToListAsync());
+            return View();
        }
        // UPLOAD: the endpoint to accept tghe picture
         [HttpPost]
