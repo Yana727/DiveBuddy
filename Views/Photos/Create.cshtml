@@ -5,12 +5,16 @@
     var selectedBusinessId = ViewData["businessId"];  
 }
 
-<h1 class = "t2">@Model.Title</h1> <!--can't use @Model-->
+<h1 class = "t2">@Model.Title</h1> 
 
-  <form id="picForm" asp-action="Create"> 
-      <section id = "photoBtn">
+<!--UPLOAD: Notice the forms has an enctype. that is needed so the form will send the file to the server-->
+
+  <form id="picForm" asp-action="Create" asp-method="POST" enctype="muilipart/form-data"> 
+      <section id ="photoBtn">
         <div class="photo2">
           <input class="btn btn-primary" type="submit" value="Add Your Photo">
+          <input class="form-control" type="file" name="pic" accept="image/*" />
+
         </div>    
       </section>          
   </form>   

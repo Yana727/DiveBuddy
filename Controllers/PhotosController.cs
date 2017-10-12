@@ -16,16 +16,22 @@ namespace DiveBuddy.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IHostingEnvironment _environment;
 
-        public PhotosController(ApplicationDbContext context, IHostingEnvironment appEnvironment) 
+        public PhotosController(ApplicationDbContext context, IHostingEnvironment appEnvironment)
         {
             _context = context;
-            this._environment = appEnvironment; 
+            this._environment = appEnvironment;
         }
         public async Task<IActionResult> Create(int? id)
-       {
-            return View();
-       }
-       // UPLOAD: the endpoint to accept tghe picture
+        {
+            var pix = await _context.BuisnessModel//connects to db
+            .SingleOrDefaultAsync(m => m.Id == id);
+            if (pix == null)
+            {
+                return NotFound();
+            }
+            return View(pix);
+        }
+        // UPLOAD: the endpoint to accept the picture
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PhotosModel image)
@@ -40,15 +46,15 @@ namespace DiveBuddy.Controllers
                 if (_image != null && _image.Length > 0)
                 {
 
-                 var file = _image;
+                    var file = _image;
                     // UPLOAD: sets the path of the where the file is stored on the server
-                 var uploads = Path.Combine(_environment.WebRootPath, "uploads\\images");
+                    var uploads = Path.Combine(_environment.WebRootPath, "uploads\\images");
 
-                if (file.Length > 0)
-                   {
+                    if (file.Length > 0)
+                    {
                         // UPLOAD: creates a new unique file name to store in the uploads folder 
-                    var fileName = Guid.NewGuid().ToString() + "_" + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    var _filePath = Path.Combine(uploads, fileName);
+                        var fileName = Guid.NewGuid().ToString() + "_" + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                        var _filePath = Path.Combine(uploads, fileName);
 
 
                         // UPLOAD: Saves file to local server
@@ -77,4 +83,4 @@ namespace DiveBuddy.Controllers
         }
 
     }
-} 
+}
