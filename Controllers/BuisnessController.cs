@@ -55,7 +55,7 @@ namespace DiveBuddy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Address,PhoneNbr, Website, Type")] BuisnessModel buisnessModel)
+        public async Task<IActionResult> Create([Bind("Id,Title,Address,City,PhoneNbr, Website, Type")] BuisnessModel buisnessModel)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace DiveBuddy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Address,PhoneNbr, Website")] BuisnessModel buisnessModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Address,City,PhoneNbr, Website")] BuisnessModel buisnessModel)
         {
             if (id != buisnessModel.Id)
             {

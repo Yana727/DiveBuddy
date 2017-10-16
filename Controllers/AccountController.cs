@@ -13,7 +13,7 @@ using Microsoft.Extensions.Options;
 using DiveBuddy.Models;
 using DiveBuddy.Models.AccountViewModels;
 using DiveBuddy.Services;
-
+    
 namespace DiveBuddy.Controllers
 {
     [Authorize]
