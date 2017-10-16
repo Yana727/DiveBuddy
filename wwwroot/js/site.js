@@ -19,3 +19,19 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+let starsS = document.querySelector('.star-1')
+let starsT = document.querySelector('.star-2')
+let starsA = document.querySelector('.star-3')
+let starsR = document.querySelector('.star-4')
+let starsZ = document.querySelector('.star-5')
+
+
+function hilight (){
+  console.log ("star1")
+}
+starsS.addEventListener("click", hilight)
+
+
+
