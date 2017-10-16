@@ -97,7 +97,7 @@ namespace DiveBuddy.Controllers
             if (ModelState.IsValid)
             {
                var user = await _userManager.GetUserAsync(HttpContext.User);// have to login
-               var newReview = new ReviewsModel  // NOT HAPPY HERE
+               var newReview = new ReviewsModel  
                 {
                      Review = review, //comes from the model 
                      ApplicationUserID = user?.Id, //"Elvis" if it's not set up, accept NULL

@@ -33,13 +33,14 @@ namespace DiveBuddy.Controllers
         }
         // UPLOAD: the endpoint to accept the picture
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(PhotosModel image)
+        public async Task<IActionResult> Create([FromRoute]int id)
         {
-
+            var image = new PhotosModel();
+            image.BuisnessId = id;
+            
             // UPLOAD: grabs the files from the incoming form
             var files = HttpContext.Request.Form.Files;
-
+            Console.WriteLine($"{image.Id}");
             // UPLOAD: processes each file
             foreach (var _image in files)
             {
@@ -48,7 +49,7 @@ namespace DiveBuddy.Controllers
 
                     var file = _image;
                     // UPLOAD: sets the path of the where the file is stored on the server
-                    var uploads = Path.Combine(_environment.WebRootPath, "uploads\\images");
+                    var uploads = Path.Combine(_environment.WebRootPath, "uploads/images");
 
                     if (file.Length > 0)
                     {

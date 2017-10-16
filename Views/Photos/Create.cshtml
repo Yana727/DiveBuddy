@@ -9,12 +9,11 @@
 
 <!--UPLOAD: Notice the forms has an enctype. that is needed so the form will send the file to the server-->
 
-  <form id="picForm" asp-action="Create" asp-method="POST" enctype="muilipart/form-data"> 
+  <form id="picForm" asp-action="Create" asp-method="POST" enctype="multipart/form-data"> 
       <section id ="photoBtn">
         <div class="photo2">
-          <input class="btn btn-primary" type="submit" value="Add Your Photo">
           <input class="form-control" type="file" name="pic" accept="image/*" />
-
+          <input class="btn btn-primary" type="submit" value="Create"/>
         </div>    
       </section>          
   </form>   
