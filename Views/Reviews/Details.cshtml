@@ -2,22 +2,22 @@
 
 @{
     ViewData["Title"] = "Details";
+    var imageCounter = 0;
 }
-<section id = "top">
-   <h1 class = "t">@Model.Title</h1> 
-   <div class = "buttons">
+  <section id = "top">
+    <h1 class = "t">@Model.Title</h1> 
+     <div class = "buttons">
 
-     <a asp-controller="Reviews" asp-action="Create" asp-route-id=@Model.Id class="btn btn-primary">Write a Review</a>
-     <a asp-controller="Photos" asp-action="Create" asp-route-id=@Model.Id class="btn btn-primary">Add Photo</a>
-   </div>
-</section>
-
+       <a asp-controller="Reviews" asp-action="Create" asp-route-id=@Model.Id class="btn btn-primary">Write a Review</a>
+       <a asp-controller="Photos" asp-action="Create" asp-route-id=@Model.Id class="btn btn-primary">Add Photo</a>
+     </div>
+  </section>
+                        <!-- POSTING PICS --> 
   <section class = "pix">
-     <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
-     <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
-     <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
-     <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
-     <img class = "mainImage" src = "https://unsplash.it/150/150/?random" alt = "mainImage">
+    @foreach (var image in Model.Photos)
+    {  
+         <img src="~/uploads//images/@image.Url" />  
+    }  
   </section>
 
   <section id = "bottom">  

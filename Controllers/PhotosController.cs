@@ -74,8 +74,8 @@ namespace DiveBuddy.Controllers
             // UPLOAD: saves model to database
             _context.Add(image);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
+            return RedirectToAction("Details","Reviews", new {id = id});
+        }                         //action     controller   param 
 
         public IActionResult Error()
         {

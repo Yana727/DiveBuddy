@@ -136,11 +136,18 @@ main {
     
 }
 
+
 .pix {
-    background-color: #f7f8f9; 
-    border-radius: 3px; 
     display: flex; 
-    justify-content: space-around; 
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.pix img {
+    background-color: #f7f8f9; 
+    border-radius: 3px;
+    width: 250px;
+    height: 187px; 
 }
 
 #bottom {

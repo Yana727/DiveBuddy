@@ -23,7 +23,9 @@
         <form class="writeRew" asp-action="Create" asp-route-id=@Model.Id>   
           <section class = "select">
               <div class = "stars2">
-
+                <!-- input for the stars                                Is it create?--> 
+                <input class="rating" type = "text" name= "rating" asp-action="Create" asp-route-id=@Model.Id>
+                <!--input for the stars ^-->  
                 <span class="glyphicon glyphicon-star star-1" aria-hidden="true"></span> 
                 <span class="glyphicon glyphicon-star star-2" aria-hidden="true"></span> 
                 <span class="glyphicon glyphicon-star star-3" aria-hidden="true"></span> 

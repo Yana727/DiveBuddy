@@ -13,5 +13,8 @@ namespace DiveBuddy{
         //FK Reviews                         //because there's going to be many reviews
         public ICollection<ReviewsModel> Reviews { get; set; } = new HashSet<ReviewsModel>();
 
+        //FK Photos
+        public ICollection<PhotosModel> Photos {get; set;} = new HashSet<PhotosModel>(); 
+
     }
 }

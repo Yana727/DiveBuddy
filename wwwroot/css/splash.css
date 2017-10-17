@@ -42,15 +42,14 @@ h1 {
     color: white; 
     font-family: cursive; 
     font-size: 5em; 
-    
+    text-shadow: 2px 2px #09347a;     
 }
 
 h3 {
     text-align: center;
     color: white; 
-    font-family: Georgia, serif	
-    ;	
-    
+    font-family: Georgia, serif;
+    text-shadow: 2px 2px #09347a;   
 }
 
 .choicesLinks {

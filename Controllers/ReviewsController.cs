@@ -44,6 +44,7 @@ namespace DiveBuddy.Controllers
 
             var reviewsModel = await _context.BuisnessModel //connects to db
                 .Include(i => i.Reviews) //bc it's the views
+                .Include(i => i.Photos)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (reviewsModel == null)
             {
@@ -59,7 +60,9 @@ namespace DiveBuddy.Controllers
             Console.WriteLine(id);
                     // we want to pass ONE location from the controller to the view
             var spot = await _context.BuisnessModel.FirstOrDefaultAsync(where => where.Id == id);
-            return View(spot);                     //^ to help filer the types
+                                       //^ to help filer the types
+            
+            return View(spot);
         }
 
         // GET: Reviews/Edit/5
